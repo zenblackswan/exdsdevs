@@ -1,0 +1,14 @@
+{
+    "name": "Ping-pong experiment",
+    "results_directory": "/home/zen/Temp",
+    "model_directory": "/home/zen/Work/soft_projects/exdsdevs/tests/models/ping_pong",
+    "root_model_class": "ping-pong",
+    "init_time": "0",
+    "finish_time": "100",
+    "random_seed": 0,
+    "iterations": 1000,
+    "global_resources": {
+        "resource_1": "resource_1.json",
+        "resource_2": "resource_2.json"
+    }
+}

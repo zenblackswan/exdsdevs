@@ -1,0 +1,23 @@
+[package]
+name = "exdsdevs"
+version = "0.1.0"
+authors = ["Zen <zenblackswan@gmail.com>"]
+edition = "2018"
+rust-version = "1.56"
+description = "A Rust library for for developing discrete-event models based on DEVS formalism."
+repository = "https://github.com/zenblackswan/exdsdevs"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+keywords = ["devs", "simulation", "modeling"]
+categories = ["simulation", "science"]
+include = ["src/", "LICENSE-*", "README.md", "CHANGELOG.md", "COPYRIGHT"]
+
+
+[dependencies]
+rand = {version = "0.8.4", features = ["std_rng"]}
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0", features = ["preserve_order", "arbitrary_precision"] }
+threadpool = "1.0"
+
+[features]
+default = []
