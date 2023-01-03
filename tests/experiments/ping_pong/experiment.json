@@ -1,7 +1,7 @@
 {
     "name": "Ping-pong experiment",
-    "results_directory": "/home/zen/Temp",
-    "model_directory": "/home/zen/Work/soft_projects/exdsdevs/tests/models/ping_pong",
+    "results_directory": "results",
+    "model_directory": "ping_pong_model",
     "root_model_class": "ping-pong",
     "init_time": "0",
     "finish_time": "100",
