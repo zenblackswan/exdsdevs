@@ -41,6 +41,9 @@
             "init_variants": {
                 "1": {
                     "state": "WAITING"
+                },
+                "2": {
+                    "state": "STRIKE"
                 }
             }
         },

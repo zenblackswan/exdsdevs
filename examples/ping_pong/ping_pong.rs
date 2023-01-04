@@ -43,7 +43,7 @@ impl Dynamic for AgentDynamic {
 
     fn internal_transition(
         &mut self,
-        _atomic_model_structure: &mut Structure,
+        _: &mut Structure,
         _sim_time: Time,
         _: &mut StdRng,
     ) {
@@ -84,7 +84,6 @@ impl Dynamic for AgentDynamic {
         x_bag: &Bag,
         rng: &mut StdRng,
     ) {
-        // Default behavior can be:
         self.internal_transition(model_structure, sim_time, rng);
         self.external_transition(model_structure, sim_time, Time::Value(0), x_bag, rng);
     }
@@ -115,13 +114,11 @@ impl Dynamic for AgentDynamic {
     }
 }
 
-pub struct RootDynamic {
-    pub state: Value,
-}
+pub struct RootDynamic;
 
 impl Dynamic for RootDynamic {
     fn new() -> Self {
-        Self { state: Value::Null }
+        Self
     }
 
     fn time_advance(&self, _: &Structure, _: &mut StdRng) -> Time {
@@ -129,7 +126,7 @@ impl Dynamic for RootDynamic {
     }
 
     fn state(&self) -> Value {
-        self.state.clone()
+        Value::Null
     }
 
     fn dynamic_type(&self) -> String {
