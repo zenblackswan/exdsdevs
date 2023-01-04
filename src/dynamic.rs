@@ -126,13 +126,22 @@ impl DynamicFactoryStorage {
         Default::default()
     }
 
-    pub fn add_dynamic_factory<T: Dynamic + 'static>(
+    fn add_dynamic_factory<T: Dynamic + 'static>(
         &mut self,
         dynamic_class_name: &str,
         dynamic_factory: DynamicFactory<T>,
     ) {
         self.factories
             .insert(dynamic_class_name.to_owned(), Box::new(dynamic_factory));
+    }
+
+    pub fn with_dynamic_factory<T: Dynamic + 'static>(
+        mut self,
+        dynamic_class_name: &str,
+        dynamic_factory: DynamicFactory<T>,
+    ) -> Self {
+        self.add_dynamic_factory(dynamic_class_name, dynamic_factory);
+        self
     }
 
     pub fn get_dynamic(&self, dynamic_class: &str) -> Result<Box<dyn Dynamic>, String> {

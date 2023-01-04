@@ -41,12 +41,7 @@ impl Dynamic for AgentDynamic {
         self.last_count = 0;
     }
 
-    fn internal_transition(
-        &mut self,
-        _: &mut Structure,
-        _sim_time: Time,
-        _: &mut StdRng,
-    ) {
+    fn internal_transition(&mut self, _: &mut Structure, _: Time, _: &mut StdRng) {
         self.state = match self.state {
             State::STRIKE => State::WAITING,
             State::WAITING => State::WAITING,

@@ -83,13 +83,22 @@ impl ObserverFactoryStorage {
         Default::default()
     }
 
-    pub fn add_observer_factory<T: Observer + 'static>(
+    fn add_observer_factory<T: Observer + 'static>(
         &mut self,
         observer_class_name: &str,
         observer_factory: ObserverFactory<T>,
     ) {
         self.factories
             .insert(observer_class_name.to_owned(), Box::new(observer_factory));
+    }
+
+    pub fn with_observer_factory<T: Observer + 'static>(
+        mut self,
+        observer_class_name: &str,
+        observer_factory: ObserverFactory<T>,
+    ) -> Self {
+        self.add_observer_factory(observer_class_name, observer_factory);
+        self
     }
 
     pub fn get_observer(&self, observer_class: &str) -> Result<Box<dyn Observer>, String> {

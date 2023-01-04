@@ -21,8 +21,8 @@ pub struct MailItem {
 
 #[derive(Debug, Clone)]
 pub struct Msg {
-    pub port: String,
-    pub value: Rc<Value>,
+    pub(crate) port: String,
+    pub(crate) value: Rc<Value>,
 }
 
 impl Msg {
