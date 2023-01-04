@@ -1,11 +1,11 @@
 {
     "name": "Ping-pong experiment",
     "results_directory": "results",
-    "model_directory": "ping_pong_log_model",
+    "model_directory": "ping_pong_model",
     "root_model_class": "ping-pong",
     "init_time": "0",
-    "finish_time": "1000",
+    "finish_time": "100",
     "random_seed": 123,
-    "iterations": 10,
+    "iterations": 2,
     "global_resources": {}
 }
