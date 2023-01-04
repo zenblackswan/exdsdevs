@@ -22,25 +22,6 @@
             },
             "args": [],
             "cwd": "${workspaceFolder}"
-        },
-        {
-            "type": "lldb",
-            "request": "launch",
-            "name": "Debug integration test '1_ping-pong_test'",
-            "cargo": {
-                "args": [
-                    "test",
-                    "--no-run",
-                    "--test=1_ping-pong_test",
-                    "--package=exdsdevs"
-                ],
-                "filter": {
-                    "name": "1_ping-pong_test",
-                    "kind": "test"
-                }
-            },
-            "args": [],
-            "cwd": "${workspaceFolder}"
         }
     ]
 }
