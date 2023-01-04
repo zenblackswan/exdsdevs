@@ -66,16 +66,16 @@ pub trait Dynamic {
 
     /// # Variants:
     /// `self.internal_transition(model_structure, sim_time);`
-    /// 
+    ///
     /// `self.external_transition(model_structure, sim_time, Time::Value(0), x_bag);`
-    /// 
-    /// 
+    ///
+    ///
     /// or:
     ///
     /// `self.external_transition(model_structure, sim_time, Time::Value(0), x_bag);`
-    /// 
+    ///
     /// `self.internal_transition(model_structure, sim_time);`
-    /// 
+    ///
     fn confluent_transition(
         &mut self,
         model_structure: &mut Structure,

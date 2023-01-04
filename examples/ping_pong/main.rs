@@ -7,7 +7,7 @@ use exdsdevs::{
     logger::Logger,
     observer::{ObserverFactory, ObserverFactoryStorage},
 };
-use ping_pong::{RootDynamic, AgentDynamic};
+use ping_pong::{AgentDynamic, RootDynamic};
 
 pub mod ping_pong;
 
@@ -17,7 +17,7 @@ pub fn main() {
             println!("Running in single thread");
             let mut experiment = create_experiment();
             experiment.run_single_thread();
-        } else if  mode.as_str() == "multi" {
+        } else if mode.as_str() == "multi" {
             println!("Running in milti thread");
             let mut experiment = create_experiment();
             experiment.run_multi_thread();
@@ -26,7 +26,7 @@ pub fn main() {
         }
     } else {
         println!("ERROR: enter the parameter: single - for run in single thread, multi - for run in multi thread");
-    } 
+    }
 }
 
 fn create_experiment() -> Experiment {
