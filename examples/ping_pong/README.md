@@ -9,8 +9,9 @@ To run the model, enter:
 ```
 
 Where:
-mode - `single` for run in single thread, `milti` for run in multithred
-path/to/experiment - relative or absolute path to experiment config file (JSON)
+**mode** - `single` for run in single thread, `milti` for run in multithred
+
+**path/to/experiment** - relative or absolute path to experiment config file (JSON)
 
 Example
 
