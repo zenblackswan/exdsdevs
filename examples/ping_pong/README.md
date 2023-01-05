@@ -4,9 +4,9 @@ Models of the agent type are connected in a ring (the output of the previous mod
 
 To run the model, enter:
 
-'''rust
+```rust
     cargo run --example ping_pong -- {mode} {path/to/experiment}
-'''
+```
 
 Where:
 mode - `single` for run in single thread, `milti` for run in multithred
@@ -14,6 +14,6 @@ path/to/experiment - relative or absolute path to experiment config file (JSON)
 
 Example
 
-'''rust
+```rust
     cargo run --example ping_pong -- multi experiment examples/ping_pong/experiment_1.json
-'''
+```
