@@ -1,0 +1,30 @@
+[package]
+name = "exdsdevs"
+version = "1.1.0"
+authors = ["Zen <zenblackswan@gmail.com>"]
+edition = "2018"
+rust-version = "1.75"
+description = "A Rust library for for developing discrete-event models based on DEVS formalism."
+repository = "https://github.com/zenblackswan/exdsdevs"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+keywords = ["devs", "simulation", "modeling"]
+categories = ["simulation", "science"]
+include = ["src/", "LICENSE-*", "README.md", "CHANGELOG.md", "COPYRIGHT"]
+
+[profile.release]
+# opt-level = "z"  # Optimize for size.
+strip = true  # Automatically strip symbols from the binary.
+lto = "fat"
+codegen-units = 1
+target-cpu = "native" # or: RUSTFLAGS="-C target-cpu=native" cargo build --release
+# panic = "abort"
+
+[dependencies]
+dyn-clone = "^1.0"
+rand = {version = "^0.8", features = ["std_rng"]}
+serde = { version = "^1.0", features = ["derive"] }
+serde_json = { version = "^1.0", features = ["preserve_order", "arbitrary_precision"] }
+
+[features]
+default = []
